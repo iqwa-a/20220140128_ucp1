@@ -44,6 +44,17 @@ import 'package:flutter/material.dart';
                     return null;
                   },
                 ),
+                TextFormField(
+                  controller: passwordController,
+                  decoration: const InputDecoration(labelText: 'email'),
+                  obscureText: true,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'email';
+                    }
+                    return null;
+                  },
+                ),
               ],
             ),
           ),
