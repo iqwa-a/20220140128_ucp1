@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
   }
   
   class _RegisterPageState extends State<RegisterPage> {
+      final _formKey = GlobalKey<FormState>();
     final TextEditingController namaController = TextEditingController();
     final TextEditingController emailController = TextEditingController();
     final TextEditingController noHpController = TextEditingController();
@@ -21,8 +22,10 @@ import 'package:flutter/material.dart';
   
     @override
     Widget build(BuildContext context) {
+      final _formKey = GlobalKey<FormState>();
       return Scaffold(
         body: Form(
+           key: _formKey,
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -92,10 +95,25 @@ import 'package:flutter/material.dart';
                   },
                 ),
                 ElevatedButton(
-                onPressed: () {}, 
-                child: Text('Register'),
-              ),
-              TextButton(
+                style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(255, 255, 68, 68),
+                shape: RoundedRectangleBorder(
+                 borderRadius: BorderRadius.circular(12),
+               ),
+            ),
+            onPressed: () {
+            if (_formKey.currentState!.validate()) {
+             ScaffoldMessenger.of(context).showSnackBar(
+           const SnackBar(content: Text('Registrasi Berhasil')),
+           );
+         }
+        },
+       child: const Text(
+        'Register',
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+       ),
+        ),
+         TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/login');
                   // Navigator.pop(context);
