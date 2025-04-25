@@ -19,14 +19,24 @@ import 'package:flutter/material.dart';
     @override
     Widget build(BuildContext context) {
       final _formKey = GlobalKey<FormState>();
-      return Scaffold(
+      return Scaffold( 
         body: Form(
           key: _formKey,
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),           
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+            Image.asset(
+              'assets/logo.png',
+              width: 120,
+              height: 120,
+            ),
+                const Text(
+              'Selamat Datang Kembali',
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 32),
                 TextFormField(
                   controller: emailController,
                   decoration: const InputDecoration(labelText: 'Email'),
