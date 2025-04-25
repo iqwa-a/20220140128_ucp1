@@ -28,7 +28,11 @@ import 'package:flutter/material.dart';
               'assets/logo.jpg',
               width: 120,
               height: 120,
-            
+            ),
+                const Text(
+              'Daftar Akun Baru',
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+            ),
           ),
         ),
       );
