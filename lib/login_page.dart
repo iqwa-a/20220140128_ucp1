@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1/register_page.dart';
   
   class LoginPage extends StatefulWidget {
     const LoginPage({super.key});
@@ -28,7 +29,7 @@ import 'package:flutter/material.dart';
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
             Image.asset(
-              'assets/logo.png',
+              'assets/logo.jpg',
               width: 120,
               height: 120,
             ),
@@ -58,6 +59,15 @@ import 'package:flutter/material.dart';
                     return null;
                   },
                 ),
+                TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RegisterPage()),
+                  );
+                },
+                child: Text('Belum punya akun? Daftar'),
+              ),
               ],
             ),
           ),
