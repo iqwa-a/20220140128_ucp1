@@ -38,7 +38,7 @@ import 'package:flutter/material.dart';
             ),
             const SizedBox(height: 32),
                 TextFormField(
-                  controller: emailController,
+                  controller: namaController,
                   decoration: const InputDecoration(labelText: 'Nama Lengkap'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -48,7 +48,7 @@ import 'package:flutter/material.dart';
                   },
                 ),
                 TextFormField(
-                  controller: passwordController,
+                  controller: emailController,
                   decoration: const InputDecoration(labelText: 'email'),
                   obscureText: true,
                   validator: (value) {
@@ -59,7 +59,7 @@ import 'package:flutter/material.dart';
                   },
                 ),
                  TextFormField(
-                  controller: passwordController,
+                  controller: noHpController,
                   decoration: const InputDecoration(labelText: 'No HP'),
                   obscureText: true,
                   validator: (value) {
@@ -81,7 +81,7 @@ import 'package:flutter/material.dart';
                   },
                 ), 
                 TextFormField(
-                  controller: passwordController,
+                  controller: konfirmasiPasswordController,
                   decoration: const InputDecoration(labelText: ' Konfirmasi Password'),
                   obscureText: true,
                   validator: (value) {
