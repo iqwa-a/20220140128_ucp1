@@ -66,6 +66,28 @@ import 'package:flutter/material.dart';
                     return null;
                   },
                 ),
+                 TextFormField(
+                  controller: passwordController,
+                  decoration: const InputDecoration(labelText: 'Password'),
+                  obscureText: true,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'password';
+                    }
+                    return null;
+                  },
+                ), 
+                TextFormField(
+                  controller: passwordController,
+                  decoration: const InputDecoration(labelText: ' Konfirmasi Password'),
+                  obscureText: true,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Konfirmasi password';
+                    }
+                    return null;
+                  },
+                ),
               ],
             ),
           ),
