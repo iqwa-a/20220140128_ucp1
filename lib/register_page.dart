@@ -33,6 +33,19 @@ import 'package:flutter/material.dart';
               'Daftar Akun Baru',
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
+            const SizedBox(height: 32),
+                TextFormField(
+                  controller: emailController,
+                  decoration: const InputDecoration(labelText: 'Nama Lengkap'),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Nama Lengkap';
+                    }
+                    return null;
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       );
