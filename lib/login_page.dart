@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1/home_page.dart';
 import 'package:ucp1/register_page.dart';
   
   class LoginPage extends StatefulWidget {
@@ -59,6 +60,17 @@ import 'package:ucp1/register_page.dart';
                     return null;
                   },
                 ),
+                ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => const HomePage()),
+                    );
+                  }
+                },
+                child: Text('Login'),
+              ),
                 TextButton(
                 onPressed: () {
                   Navigator.push(
