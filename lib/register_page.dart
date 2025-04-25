@@ -8,8 +8,11 @@ import 'package:flutter/material.dart';
   }
   
   class _RegisterPageState extends State<RegisterPage> {
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
+    final namaController = TextEditingController();
+    final emailController = TextEditingController();
+    final noHpController = TextEditingController();
+    final passwordController = TextEditingController();
+    final konfirmasiPasswordController = TextEditingController();
   
     @override
     void initState() {
