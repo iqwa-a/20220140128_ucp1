@@ -16,4 +16,21 @@ import 'package:flutter/material.dart';
       super.initState();
     }
   
-  }
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+        body: Form(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [ Image.asset(
+              'assets/logo.jpg',
+              width: 120,
+              height: 120,
+            
+          ),
+        ),
+      );
+    }
+  } 
