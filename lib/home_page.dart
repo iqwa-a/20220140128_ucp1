@@ -29,9 +29,14 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child: Column(
-          spacing: 8,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text('Selamat Datang di Home Page!')],
+          children: [
+            Image.asset(
+              'assets/logo2.jpg',
+              width: 400, 
+              height: 200, 
+            ),
+          ],
         ),
       ),
     );
