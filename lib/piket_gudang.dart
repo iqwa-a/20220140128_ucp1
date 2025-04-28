@@ -11,6 +11,7 @@ class _PiketGudangState extends State<PiketGudang> {
   final TextEditingController namaController = TextEditingController();
   final TextEditingController tugasController = TextEditingController();
   DateTime selectedDate = DateTime.now();
+  List<Map<String, String>> piketList = [];
 
   Future<void> _selectedDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -55,6 +56,32 @@ class _PiketGudangState extends State<PiketGudang> {
               ),
             ),
             const SizedBox(height: 16),
+            const Text(
+              'Pilih Tanggal',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            ),
+            const SizedBox(height: 8),
+            InkWell(
+              onTap: () => _selectedDate(context),
+              child: Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Row(
+                  children: [
+                    const Icon(Icons.calendar_today, size: 20),
+                    const SizedBox(width: 8),
+                    Text(
+                      '${selectedDate.day}/${selectedDate.month}/${selectedDate.year}',
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 24),
           ],
         ),
       ),
