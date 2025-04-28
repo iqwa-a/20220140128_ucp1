@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const PiketGudang(),
+                            builder: (context) =>  PiketGudang(nama: widget.nama),
                           ),
                         );
                       },
