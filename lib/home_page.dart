@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1/piket_gudang.dart';
 
 class HomePage extends StatefulWidget {
   final String nama;
 
-  const HomePage(
-    {super.key,
-    required this.nama});
+  const HomePage({super.key, required this.nama});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -48,25 +47,38 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 20),
-            
+
             SizedBox(
               height: 150,
               child: Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(right: 8),
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(3),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Icon(Icons.calendar_today, color: Colors.white),
-                          SizedBox(height: 3),
-                          Text('Data Piket', style: TextStyle(color: Colors.white)),
-                        ],
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PiketGudang(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(right: 8),
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(3),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Icon(Icons.calendar_today, color: Colors.white),
+                            SizedBox(height: 3),
+                            Text(
+                              'Data Piket',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -82,7 +94,10 @@ class _HomePageState extends State<HomePage> {
                         children: const [
                           Icon(Icons.people, color: Colors.white),
                           SizedBox(height: 8),
-                          Text('Data Pelanggan', style: TextStyle(color: Colors.white)),
+                          Text(
+                            'Data Pelanggan',
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ],
                       ),
                     ),
@@ -105,7 +120,10 @@ class _HomePageState extends State<HomePage> {
                   children: const [
                     Icon(Icons.inventory_2, color: Colors.white),
                     SizedBox(height: 8),
-                    Text('Barang Masuk/Keluar', style: TextStyle(color: Colors.white)),
+                    Text(
+                      'Barang Masuk/Keluar',
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ],
                 ),
               ),
