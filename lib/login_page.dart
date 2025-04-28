@@ -41,7 +41,8 @@ import 'package:ucp1/register_page.dart';
             const SizedBox(height: 32),
                 TextFormField(
                   controller: emailController,
-                  decoration: const InputDecoration(labelText: 'Email'),
+                  decoration: const InputDecoration(labelText: 'Email',prefixIcon: Icon(Icons.email),
+                border: OutlineInputBorder(),),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your email';
@@ -51,7 +52,8 @@ import 'package:ucp1/register_page.dart';
                 ),
                 TextFormField(
                   controller: passwordController,
-                  decoration: const InputDecoration(labelText: 'Password'),
+                  decoration: const InputDecoration(labelText: 'Password',prefixIcon: Icon(Icons.lock),
+                border: OutlineInputBorder(),),
                   obscureText: true,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -65,7 +67,9 @@ import 'package:ucp1/register_page.dart';
                   if (_formKey.currentState!.validate()) {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => const HomePage()),
+                      MaterialPageRoute(builder: (context) => HomePage(
+                        nama: emailController.text,
+                      )),
                     );
                   }
                 },
