@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1/pelanggan_page.dart';
 import 'package:ucp1/piket_gudang.dart';
 
 class HomePage extends StatefulWidget {
@@ -83,12 +84,19 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Expanded(
+                    child: InkWell(
+                    onTap: () {
+                    Navigator.push(
+                    context,
+                     MaterialPageRoute(builder: (context) => const AddPelanggan()),
+                     );
+                    },  
                     child: Container(
-                      margin: const EdgeInsets.only(left: 8),
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
+                    margin: const EdgeInsets.only(left: 8),
+                    decoration: BoxDecoration(
+                    color: Colors.red,
+                     borderRadius: BorderRadius.circular(3),
+                     ),                               
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
@@ -102,6 +110,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
+                
+                  )
                 ],
               ),
             ),
