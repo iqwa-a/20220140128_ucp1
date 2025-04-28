@@ -106,7 +106,14 @@ class _PiketGudangState extends State<PiketGudang> {
                 const SizedBox(width: 8),
                 ElevatedButton(
                   onPressed: () {
-                    if (tugasController.text.isNotEmpty) {
+                    if (namaController.text.isEmpty || tugasController.text.isEmpty ) {
+                       ScaffoldMessenger.of(context).showSnackBar(
+                       const SnackBar(
+                      content: Text('Semua kolom harus diisi!'),
+                       backgroundColor: Colors.red,
+                       ),
+                      );
+                    }else {
                       setState(() {
                         piketList.add({
                           'tugas': tugasController.text,
@@ -116,6 +123,7 @@ class _PiketGudangState extends State<PiketGudang> {
                         });
                       });
                       tugasController.clear();
+                      namaController.clear();
                     }
                   },
                   child: const Text('Submit'),
