@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart'; 
  
  class DetailPiket extends StatelessWidget  {
    final String email;
@@ -31,14 +32,58 @@ import 'package:flutter/material.dart';
              child: Center(
                child: Column(
                  children: [
-                    Text(
-                     '$email',
+                    Row(
+                     children: [
+                       Text(
+                         formatDate(date),
+                         style: const TextStyle(
+                           fontSize: 18,
+                           fontWeight: FontWeight.bold,
+                           color: Colors.deepOrange,
+                         ),
+                       ),
+                       const SizedBox(
+                         width: 30,
+                       ),
+                       Card(
+                         color: Colors.deepOrange,
+                         shape: RoundedRectangleBorder(
+                           borderRadius: BorderRadius.circular(15),
+                         ),
+                         child: Padding(
+                           padding: const EdgeInsets.symmetric(
+                             horizontal: 12.0,
+                             vertical: 8.0,
+                           ),
+                           child: Text(
+                             email,
+                             style: const TextStyle(
+                               fontSize: 14,
+                               color: Colors.white,
+                             ),
+                           ),
+                         ),
+                       ),
+                     ],
+                    ),
+                   const SizedBox(
+                     height: 20,
                    ),
-                   Text(
-                     '${formatDate(date)}',
-                   ),
-                   Text(
-                     '$task',
+                    Card(
+                     color: Colors.deepOrange,
+                     shape: RoundedRectangleBorder(
+                       borderRadius: BorderRadius.circular(15),
+                     ),
+                     child: Padding(
+                       padding: const EdgeInsets.all(20.0),
+                       child: Text(
+                         task,
+                         style: const TextStyle(
+                           fontSize: 16,
+                           color: Colors.white,
+                         ),
+                       ),
+                     ),
                    ),
                  ],
                ),
