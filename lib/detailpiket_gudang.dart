@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
  
- class DetailPiket extends StatefulWidget {
+ class DetailPiket extends StatelessWidget  {
    final String email;
    final String date;
    final String task;
  
    const DetailPiket({ Key? key, required this.email, required this.date, required this.task }) : super(key: key);
+   String formatDate(String date) {
+     try {
+       DateTime parsedDate = DateFormat('d-M-yyyy').parse(date);
+       return DateFormat('EEEE, dd MMMM yyyy', 'id_ID').format(parsedDate);
+     } catch (e) {
+       return 'Format tanggal tidak valid';
+     }
+   }
  
-   @override
-   _DetailPiketState createState() => _DetailPiketState();
- }
- 
- class _DetailPiketState extends State<DetailPiket> {
+  
    @override
    Widget build(BuildContext context) {
     final _formkey = GlobalKey<FormState>();
@@ -27,7 +31,15 @@ import 'package:flutter/material.dart';
              child: Center(
                child: Column(
                  children: [
- 
+                    Text(
+                     '$email',
+                   ),
+                   Text(
+                     '${formatDate(date)}',
+                   ),
+                   Text(
+                     '$task',
+                   ),
                  ],
                ),
              ),
