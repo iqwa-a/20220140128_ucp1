@@ -82,6 +82,47 @@ class _PiketGudangState extends State<PiketGudang> {
               ),
             ),
             const SizedBox(height: 24),
+            const Text(
+              'Tugas Piket',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            ),
+            const SizedBox(height: 8),
+            Row(
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    controller: tugasController,
+                    decoration: InputDecoration(
+                      hintText: 'Masukkan tugas',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                ElevatedButton(
+                  onPressed: () {
+                    if (tugasController.text.isNotEmpty) {
+                      setState(() {
+                        piketList.add({
+                          'tugas': tugasController.text,
+                          'tanggal':
+                              '${selectedDate.day}/${selectedDate.month}/${selectedDate.year}',
+                          'nama': namaController.text,
+                        });
+                      });
+                      tugasController.clear();
+                    }
+                  },
+                  child: const Text('Submit'),
+                ),
+              ],
+            ),
+            const SizedBox(height: 24),
           ],
         ),
       ),
