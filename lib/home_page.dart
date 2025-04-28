@@ -48,6 +48,68 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 20),
+            
+            SizedBox(
+              height: 150,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.only(right: 8),
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(3),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(Icons.calendar_today, color: Colors.white),
+                          SizedBox(height: 3),
+                          Text('Data Piket', style: TextStyle(color: Colors.white)),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.only(left: 8),
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(Icons.people, color: Colors.white),
+                          SizedBox(height: 8),
+                          Text('Data Pelanggan', style: TextStyle(color: Colors.white)),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+
+            SizedBox(
+              height: 100,
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Icon(Icons.inventory_2, color: Colors.white),
+                    SizedBox(height: 8),
+                    Text('Barang Masuk/Keluar', style: TextStyle(color: Colors.white)),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
