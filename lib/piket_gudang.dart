@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1/detailPiket.dart';
 
 class PiketGudang extends StatefulWidget {
-  const PiketGudang({super.key});
+  final String nama;
+  const PiketGudang({super.key, required this.nama});
 
   @override
   State<PiketGudang> createState() => _PiketGudangState();
@@ -28,6 +30,10 @@ class _PiketGudangState extends State<PiketGudang> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    namaController.text = widget.nama;
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -119,7 +125,7 @@ class _PiketGudangState extends State<PiketGudang> {
                           'tugas': tugasController.text,
                           'tanggal':
                               '${selectedDate.day}/${selectedDate.month}/${selectedDate.year}',
-                          'nama': namaController.text,
+                          'nama': widget.nama,
                         });
                       });
                       tugasController.clear();
@@ -145,7 +151,23 @@ class _PiketGudangState extends State<PiketGudang> {
                         child: ListTile(
                           title: Text(piket['tugas']!),
                           subtitle: Text(
-                              '${piket['nama']} - ${piket['tanggal']}'),
+                              '${piket['nama']} - ${piket['tanggal']}',
+                               style: const TextStyle(color: Colors.white70),),
+                               trailing: const Icon(
+                              Icons.arrow_forward_ios_outlined,
+                              color: Colors.white,
+                               ),
+                               onTap: () { Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                               builder: (context) => DetailPiket(
+                                  email: 'contoh@email.com',
+                                   date: piket['tanggal']!,
+                                    task: piket['tugas']!,
+                                  ),
+                                ),
+                             );
+                          }      
                         ),
                       );
                     }).toList(),
