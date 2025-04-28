@@ -123,6 +123,26 @@ class _PiketGudangState extends State<PiketGudang> {
               ],
             ),
             const SizedBox(height: 24),
+                       
+            const Text(
+              'Daftar Tugas Piket',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            ),
+            const SizedBox(height: 8),
+            piketList.isNotEmpty
+                ? Column(
+                    children: piketList.map((piket) {
+                      return Card(
+                        margin: const EdgeInsets.only(bottom: 8),
+                        child: ListTile(
+                          title: Text(piket['tugas']!),
+                          subtitle: Text(
+                              '${piket['nama']} - ${piket['tanggal']}'),
+                        ),
+                      );
+                    }).toList(),
+                  )
+                : const Center(child: Text('Belum ada data piket')),
           ],
         ),
       ),
