@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
    const Register({ Key? key }) : super(key: key);
  
    @override
-   _RegisterState createState() => _RegisterState();
- }
+   State<Register> createState() => _RegisterState(); }
  
  class _RegisterState extends State<Register> {
    @override
