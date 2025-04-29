@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1/detailbarang_page.dart';
  
  class AddBarang extends StatefulWidget {
    const AddBarang({ Key? key }) : super(key: key);
@@ -39,6 +40,7 @@ import 'package:flutter/material.dart';
          backgroundColor: Colors.deepOrange,
        ),
        body: Form(
+        key: _formkey,
          child: SingleChildScrollView(
            padding: const EdgeInsets.all(30.0),
            child: Container(
@@ -200,6 +202,41 @@ import 'package:flutter/material.dart';
                        ),
                      ),
                    ],
+                 ),
+                 const SizedBox(
+                   height: 80,
+                 ),
+                 ElevatedButton(
+                   style: ElevatedButton.styleFrom(
+                         minimumSize: Size(300, 50),
+                         shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                         ),
+                         backgroundColor: Colors.deepOrange,
+                         foregroundColor: Colors.white, 
+                       ),
+                   onPressed: () {
+                   if (_formkey.currentState!.validate()) {
+                    print('Date: ${_dateController.text}');
+                       print('Jenis Transaksi: $_selectedJenisTransaksi');
+                       print('Jenis Barang: $_selectedJenisBarang');
+                       print('Jumlah Barang: ${_jumlahBarangController.text}');
+                       print('Harga Satuan: ${_hargaSatuanController.text}');
+                    Navigator.push(
+                      context,
+                    MaterialPageRoute(
+                     builder: (context) => DetailBarang(
+                     date: _dateController.text,
+                     jenisTransaksi: _selectedJenisTransaksi,
+                     jenisBarang: _selectedJenisBarang,
+                     jumlahBarang: _jumlahBarangController.text,
+                      hargaSatuan: _hargaSatuanController.text,
+                     ),
+                   ),
+                  );
+                 }
+                },
+                 child: const Text('Submit'),
                  ),
                ],
              ),
