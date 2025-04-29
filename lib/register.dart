@@ -135,6 +135,11 @@ import 'package:ucp1/login_page.dart';
                                    },
                                  ),
                                ),
+                               validator: (value) {
+                                 if (value == null || value.isEmpty) {
+                                   return "Password tidak boleh kosong";
+                                 }
+                               },
                              ),
                            ],
                          ),
@@ -164,6 +169,11 @@ import 'package:ucp1/login_page.dart';
                                    },
                                  ),
                                ),
+                               validator: (value) {
+                                 if (value == null || value.isEmpty) {
+                                   return "Password tidak boleh kosong";
+                                 }
+                               },
                              ),
                            ],
                          ),
