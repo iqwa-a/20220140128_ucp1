@@ -227,8 +227,8 @@ import 'package:ucp1/detailbarang_page.dart';
                     MaterialPageRoute(
                      builder: (context) => DetailBarang(
                      date: _dateController.text,
-                     jenisTransaksi: _selectedJenisTransaksi,
-                     jenisBarang: _selectedJenisBarang,
+                     jenisTransaksi: _selectedJenisTransaksi ?? '',
+                     jenisBarang: _selectedJenisBarang ?? '',
                      jumlahBarang: _jumlahBarangController.text,
                       hargaSatuan: _hargaSatuanController.text,
                      ),
