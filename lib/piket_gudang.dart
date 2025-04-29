@@ -159,17 +159,18 @@ class _PiketGudangState extends State<PiketGudang> {
                               Icons.arrow_forward_ios_outlined,
                               color: Colors.white,
                                ),
-                               onTap: () { Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                               builder: (context) => DetailPiket(
-                                 email: piket['nama']!, 
-                                 date: piket['tanggal']!,
-                                 task: piket['tugas']!, name: '',
-                                  ),
-                                ),
+                              onTap: () {
+                              Navigator.push(
+                               context,
+                               MaterialPageRoute(
+                                builder: (context) => DetailPiket(
+                                name: piket['nama']!,
+                                date: piket['tanggal']!,
+                                 task: piket['tugas']!,
+                                 ),
+                               ),
                              );
-                          }      
+                           }
                         ),
                       );
                     }).toList(),
