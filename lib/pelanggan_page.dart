@@ -9,6 +9,7 @@ import 'package:ucp1/detailpelanggan_page.dart';
  }
  
  class _AddPelangganState extends State<AddPelanggan> {
+          final _formkey = GlobalKey<FormState>();
   final TextEditingController _nameController = TextEditingController();
    final TextEditingController _emailController = TextEditingController();
    final TextEditingController _phoneController = TextEditingController();
@@ -208,6 +209,30 @@ import 'package:ucp1/detailpelanggan_page.dart';
                      }
                    }, 
                    child: const Text('Simpan'),
+                 ),
+                 const SizedBox(
+                   height: 20,
+                 ),
+                 ElevatedButton(
+                   style: ElevatedButton.styleFrom(
+                         minimumSize: Size(300, 50),
+                         shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                         ),
+                         backgroundColor: Colors.white,
+                         foregroundColor: Colors.black, 
+                       ),
+                       onPressed: (){
+                    _formkey.currentState?.reset();
+                    _nameController.clear();
+                    _emailController.clear();
+                    _phoneController.clear();
+                    _addressController.clear();
+                    _provinsiController.clear();
+                    _kodeposController.clear();
+                    }, 
+                   
+                   child: const Text('Reset'),
                  ),
                ],
              ),
