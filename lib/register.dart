@@ -170,7 +170,46 @@ import 'package:ucp1/login_page.dart';
                        ),
                      ],
                    ),
-                   
+                   Column(
+                     children: [
+                       ElevatedButton(
+                         style: ElevatedButton.styleFrom(
+                           minimumSize: const Size.fromHeight(50),
+                           shape: RoundedRectangleBorder(
+                             borderRadius: BorderRadius.circular(20),
+                           ),
+                           backgroundColor: Colors.deepOrange,
+                           foregroundColor: Colors.white, 
+                         ),
+                         onPressed: () {
+                           if (_formkey.currentState!.validate()) {
+                             Navigator.pushAndRemoveUntil(
+                               context,
+                               MaterialPageRoute(builder: (context) => const LoginPage()),
+                               (route) => false,
+                             );
+                           }
+                         }, 
+                         child: const Text('Daftar'),
+                       ),
+                       const SizedBox(
+                         height: 20,
+                       ),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.center,
+                         children: [
+                           const Text('Sudah memiliki akun? Silahkan'),
+                           TextButton(
+                             onPressed: () {
+                               Navigator.push(
+                                 context,
+                                 MaterialPageRoute(builder: (context) => const LoginPage()));
+                             }, 
+                           child: const Text('Login Disini',style: TextStyle(color: Colors.deepOrange),))
+                         ],
+                       ),
+                     ],
+                   ),
                  ],
                ),
              ),
