@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ucp1/home_page.dart';
+import 'package:ucp1/register.dart';
 import 'package:ucp1/register_page.dart';
   
   class LoginPage extends StatefulWidget {
@@ -79,7 +80,7 @@ import 'package:ucp1/register_page.dart';
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => RegisterPage()),
+                    MaterialPageRoute(builder: (context) => Register()),
                   );
                 },
                 child: Text('Belum punya akun? Daftar'),
