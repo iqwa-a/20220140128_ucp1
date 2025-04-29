@@ -28,7 +28,7 @@ import 'package:flutter/material.dart';
                child: Column(
                  children: [
                    Image.asset(
-                       'assets/images/man.png',
+                       'assets/logo.jpg',
                        height: 100,
                        width: 100,
                    ),
@@ -41,7 +41,7 @@ import 'package:flutter/material.dart';
                    TextFormField(
                      controller: _addressController,
                      decoration: InputDecoration(
-                       labelText: 'Alamat',
+                       labelText: '',
                        prefixIcon: const Icon(Icons.home),
                        border: OutlineInputBorder(
                          borderRadius: BorderRadius.circular(20),
@@ -122,7 +122,7 @@ import 'package:flutter/material.dart';
                        ),
                      onPressed: (){
                        if (_formkey.currentState!.validate()) {
-                         Navigator.popAndPushNamed(context, '/pelanggan');
+                         Navigator.pop(context, 'Pelanggan');
                        }
                      }, 
                      child: const Text('Kembali'),
