@@ -10,6 +10,16 @@ import 'package:intl/intl.dart';
    final String hargaSatuan;
  
  const DetailBarang({ Key? key, required this.date, required this.jenisTransaksi, required this.jenisBarang, required this.jumlahBarang, required this.hargaSatuan }) : super(key: key);
+ String calculateTotalHarga(String jumlahBarang, String hargaSatuan) {
+     try {
+       int jumlah = int.parse(jumlahBarang);
+       int harga = int.parse(hargaSatuan);
+       int total = jumlah * harga;
+       return total.toString();
+     } catch (e) {
+       return 'Perhitungan tidak valid';
+     }
+   }
    @override
    Widget build(BuildContext context){
      return Scaffold(
@@ -94,6 +104,18 @@ import 'package:intl/intl.dart';
                          width: 150,
                        ),
                        Text('$hargaSatuan')
+                     ],
+                   ),
+                   const SizedBox(
+                     height: 20,
+                   ),
+                   Row(
+                     children: [
+                       Text('Total Harga'),
+                       const SizedBox(
+                         width: 200,
+                       ),
+                       Text(calculateTotalHarga(jumlahBarang, hargaSatuan)),
                      ],
                    ),
                  ],
