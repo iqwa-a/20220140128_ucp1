@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
    Widget build(BuildContext context){
      return Scaffold(
        appBar: AppBar(
-         title: const Text('Title'),
+         title: const Text('ditael pelanggan'),
        ),
        body: Container(),
      );

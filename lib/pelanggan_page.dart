@@ -189,7 +189,22 @@ import 'package:flutter/material.dart';
                          backgroundColor: Colors.deepOrange,
                          foregroundColor: Colors.white, 
                        ),
-                   onPressed: (){}, 
+                   onPressed: (){
+                    if (_formkey.currentState!.validate()) {
+                      Navigator.pushNamed(
+                         context,
+                         'detailPelanggan_page',
+                         arguments: {
+                           'name': _nameController.text,
+                           'email': _emailController.text,
+                           'phone': _phoneController.text,
+                           'address': _addressController.text,
+                           'provinsi': _provinsiController.text,
+                           'kodepos': _kodeposController.text,
+                         },
+                       );
+                     }
+                   }, 
                    child: const Text('Simpan'),
                  ),
                ],
