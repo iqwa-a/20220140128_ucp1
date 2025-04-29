@@ -28,7 +28,7 @@ import 'package:flutter/material.dart';
                child: Column(
                  children: [
                    Image.asset(
-                       'assets/logo.jpg',
+                       'assets/logo4.jpg',
                        height: 100,
                        width: 100,
                    ),
