@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1/detailpelanggan_page.dart';
  
  class AddPelanggan extends StatefulWidget {
    const AddPelanggan({ Key? key }) : super(key: key);
@@ -19,7 +20,7 @@ import 'package:flutter/material.dart';
         final _formkey = GlobalKey<FormState>();
      return Scaffold(
        appBar: AppBar(
-         title: const Text('Title'),
+         title: const Text('Pelanggan'),
        ),
        body: Form(
          key: _formkey,
@@ -191,18 +192,19 @@ import 'package:flutter/material.dart';
                        ),
                    onPressed: (){
                     if (_formkey.currentState!.validate()) {
-                      Navigator.pushNamed(
-                         context,
-                         'detailPelanggan_page',
-                         arguments: {
-                           'name': _nameController.text,
-                           'email': _emailController.text,
-                           'phone': _phoneController.text,
-                           'address': _addressController.text,
-                           'provinsi': _provinsiController.text,
-                           'kodepos': _kodeposController.text,
-                         },
-                       );
+                      Navigator.push(
+                     context,
+                     MaterialPageRoute(
+                      builder: (context) => DetailPelanggan(
+                     name: _nameController.text,
+                     emailCust: _emailController.text,
+                     phone: _phoneController.text,
+                     address: _addressController.text,
+                     provinsi: _provinsiController.text,
+                       kodepos: _kodeposController.text,
+                    ),
+                  ),
+               );
                      }
                    }, 
                    child: const Text('Simpan'),
