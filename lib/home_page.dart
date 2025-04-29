@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1/barang_page.dart';
 import 'package:ucp1/pelanggan_page.dart';
 import 'package:ucp1/piket_gudang.dart';
 
@@ -119,6 +120,13 @@ class _HomePageState extends State<HomePage> {
 
             SizedBox(
               height: 100,
+              child: InkWell(
+                onTap: () {
+               Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AddBarang()),
+      );
+    },
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -138,6 +146,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+            )
           ],
         ),
       ),
