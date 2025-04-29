@@ -7,14 +7,7 @@ import 'package:intl/intl.dart';
    final String task;
  
    const DetailPiket({ Key? key, required this.email, required this.date, required this.task }) : super(key: key);
-   String formatDate(String date) {
-     try {
-       DateTime parsedDate = DateFormat('d-M-yyyy').parse(date);
-       return DateFormat('EEEE, dd MMMM yyyy', 'id_ID').format(parsedDate);
-     } catch (e) {
-       return 'Format tanggal tidak valid';
-     }
-   }
+  
  
   
    @override
@@ -35,13 +28,13 @@ import 'package:intl/intl.dart';
                     Row(
                      children: [
                        Text(
-                         formatDate(date),
-                         style: const TextStyle(
-                           fontSize: 18,
-                           fontWeight: FontWeight.bold,
-                           color: Colors.deepOrange,
-                         ),
-                       ),
+                    date, 
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.deepOrange,
+                    ),
+                  ),
                        const SizedBox(
                          width: 30,
                        ),

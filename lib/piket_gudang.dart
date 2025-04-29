@@ -164,7 +164,7 @@ class _PiketGudangState extends State<PiketGudang> {
                                context,
                                MaterialPageRoute(
                                 builder: (context) => DetailPiket(
-                                name: piket['nama']!,
+                                email: piket['nama']!,
                                 date: piket['tanggal']!,
                                  task: piket['tugas']!,
                                  ),
