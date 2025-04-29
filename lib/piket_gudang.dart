@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ucp1/detailPiket.dart';
+import 'package:intl/intl.dart';
+import 'package:ucp1/detailpiket_gudang.dart';
+
 
 class PiketGudang extends StatefulWidget {
   final String nama;
@@ -35,6 +37,7 @@ class _PiketGudangState extends State<PiketGudang> {
     namaController.text = widget.nama;
   }
   Widget build(BuildContext context) {
+    final _formkey = GlobalKey<FormState>;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Data Piket Gudang'),
@@ -123,8 +126,7 @@ class _PiketGudangState extends State<PiketGudang> {
                       setState(() {
                         piketList.add({
                           'tugas': tugasController.text,
-                          'tanggal':
-                              '${selectedDate.day}/${selectedDate.month}/${selectedDate.year}',
+                          'tanggal':DateFormat('d/M/yyyy').format(selectedDate),
                           'nama': widget.nama,
                         });
                       });
@@ -161,9 +163,9 @@ class _PiketGudangState extends State<PiketGudang> {
                               context,
                               MaterialPageRoute(
                                builder: (context) => DetailPiket(
-                                  email: 'contoh@email.com',
-                                   date: piket['tanggal']!,
-                                    task: piket['tugas']!,
+                                 email: piket['nama']!, 
+                                 date: piket['tanggal']!,
+                                 task: piket['tugas']!, name: '',
                                   ),
                                 ),
                              );
